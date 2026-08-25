@@ -41,12 +41,6 @@
 
 ## 产品预览
 
-<p align="center">
-  <img src="docs/images/breakpoint-disassembly.png" width="708" alt="MemoryToolkit 硬件断点与汇编视图">
-</p>
-
-<p align="center"><sub>硬件断点命中后的汇编、寄存器与分支现场视图</sub></p>
-
 ## 典型工作流
 
 ```mermaid
@@ -106,8 +100,6 @@ flowchart LR
 
 ## 安装
 
-可从 [GitHub Releases](https://github.com/susu123oss/MemoryToolkitApp/releases) 获取已经发布的安装包。文件名中的版本来自 `MemoryToolkitApp/control`。
-
 | 设备环境 | 安装包 | 说明 |
 | --- | --- | --- |
 | TrollStore | `MemoryToolkitApp-vX.Y.Z.tipa` | 独立 App，包内为 `Payload/MemoryToolkitApp.app` |
@@ -131,32 +123,6 @@ flowchart LR
 | MCP | 提供 HTTP/SSE 工具服务；应只在可信网络或 USB 转发环境中启用 |
 | H5 | 提供部分兼容映射，不承诺完整 H5GG API |
 
-## 本地构建
-
-构建主机需要 macOS、Xcode/iPhoneOS SDK、Theos、GNU Make、`ldid`、`rsync`、`python3`、`zip` 和 `dpkg-deb`。
-
-### 仅构建 TIPA
-
-```sh
-./build-mac.sh --theos "$HOME/theos" --jobs 4 --no-upload
-```
-
-### 构建 TIPA 与三种 DEB
-
-```sh
-./build-mac.sh \
-  --theos "$HOME/theos" \
-  --theos-roothide "$HOME/theos-roothide" \
-  --debs --jobs 4 --no-upload
-```
-
-构建产物输出到：
-
-```text
-MemoryToolkitApp/packages/
-```
-
-维护者的最终构建默认会将选中的产物上传到已配置设备；公开环境进行本地构建时建议保留 `--no-upload`。完整依赖、缓存、审计和上传说明见 [BUILDING-MAC.md](BUILDING-MAC.md)。
 
 ## 项目结构
 
@@ -179,11 +145,6 @@ MemoryToolkitApp/
 PluginTemplate/         # 可嵌入的插件模板
 scripts/                # 构建、审计、上传与日志工具
 ```
-
-## 相关文档
-
-- [macOS 构建说明](BUILDING-MAC.md)
-- [H5 接口与 MT API 映射](H5-MT-API-Mapping.md)
 
 ## 使用边界
 
