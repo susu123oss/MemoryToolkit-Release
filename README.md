@@ -1,6 +1,3 @@
-<p align="center">
-  <img src="MemoryToolkitApp/Resources/Icon-1024.png" width="112" alt="MemoryToolkit App Icon">
-</p>
 
 <h1 align="center">MemoryToolkit</h1>
 
