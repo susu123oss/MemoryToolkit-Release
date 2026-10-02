@@ -33,17 +33,10 @@
 ### v1.8.4
 
 <p align="center">
-  <a href="https://github.com/susu123oss/MemoryToolkit-Release/releases/tag/1.8.4"><strong>查看 v1.8.4 Release 与全部安装包</strong></a>
+  <a href="https://github.com/susu123oss/MemoryToolkit-Release/releases/tag/1.8.4"><strong>前往 v1.8.4 Release 下载</strong></a>
 </p>
 
-| 你的环境 | 推荐下载 |
-| --- | --- |
-| **TrollStore / 独立 App** | [MemoryToolkitApp-v1.8.4.tipa](https://github.com/susu123oss/MemoryToolkit-Release/releases/download/1.8.4/MemoryToolkitApp-v1.8.4.tipa) |
-| **rootful 越狱** | [MemoryToolkitApp-v1.8.4-rootful.deb](https://github.com/susu123oss/MemoryToolkit-Release/releases/download/1.8.4/MemoryToolkitApp-v1.8.4-rootful.deb) |
-| **rootless 越狱** | [MemoryToolkitApp-v1.8.4-rootless.deb](https://github.com/susu123oss/MemoryToolkit-Release/releases/download/1.8.4/MemoryToolkitApp-v1.8.4-rootless.deb) |
-| **RootHide** | [MemoryToolkitApp-v1.8.4-roothide.deb](https://github.com/susu123oss/MemoryToolkit-Release/releases/download/1.8.4/MemoryToolkitApp-v1.8.4-roothide.deb) |
-
-> 不确定选哪个时：**TrollStore 安装优先选 TIPA；使用越狱包管理器安装时，请按 rootful / rootless / RootHide 环境选择对应 DEB。不要混装不同环境的 DEB。**
+> TrollStore 用户使用 TIPA；通过越狱包管理器安装时，请选择与你当前环境匹配的 DEB。具体选择方式见下方“下载与安装”。
 
 ## v1.8.4 重点更新
 
@@ -372,7 +365,7 @@ MT 针对真实 iPhone 调试场景提供独立的系统级悬浮交互：
 | --- | --- |
 | **系统** | iOS 14.0+ |
 | **架构** | iPhoneOS arm64；RootHide 使用对应 arm64e 打包环境 |
-| **安装方式** | TrollStore TIPA、rootful / rootless / RootHide DEB |
+| **安装方式** | TrollStore / 越狱包管理器 |
 | **悬浮窗** | 支持竖屏和左右横屏，并跟随前台 App 方向 |
 | **数据硬件断点** | 当前最多管理 4 个，受 ARM64 调试资源和环境权限限制 |
 | **代码断点** | BVR 硬件代码断点，能力取决于设备与目标进程权限 |
