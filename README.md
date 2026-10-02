@@ -17,7 +17,9 @@
 </p>
 
 <p align="center">
+  <a href="#最新版本">最新版本</a> ·
   <a href="#下载与安装">下载与安装</a> ·
+  <a href="#v184-重点更新">v1.8.4 更新</a> ·
   <a href="#mt-能做什么">核心能力</a> ·
   <a href="#典型工作流">典型工作流</a> ·
   <a href="#ai--mcp--ce--h5">扩展协作</a> ·
@@ -25,6 +27,39 @@
 </p>
 
 > MemoryToolkit 是通用技术调试工具，仅用于安全研究、逆向工程学习和已获授权的技术测试，不针对任何特定应用。
+
+## 最新版本
+
+### v1.8.4
+
+<p align="center">
+  <a href="https://github.com/susu123oss/MemoryToolkit-Release/releases/tag/1.8.4"><strong>查看 v1.8.4 Release 与全部安装包</strong></a>
+</p>
+
+| 你的环境 | 推荐下载 |
+| --- | --- |
+| **TrollStore / 独立 App** | [MemoryToolkitApp-v1.8.4.tipa](https://github.com/susu123oss/MemoryToolkit-Release/releases/download/1.8.4/MemoryToolkitApp-v1.8.4.tipa) |
+| **rootful 越狱** | [MemoryToolkitApp-v1.8.4-rootful.deb](https://github.com/susu123oss/MemoryToolkit-Release/releases/download/1.8.4/MemoryToolkitApp-v1.8.4-rootful.deb) |
+| **rootless 越狱** | [MemoryToolkitApp-v1.8.4-rootless.deb](https://github.com/susu123oss/MemoryToolkit-Release/releases/download/1.8.4/MemoryToolkitApp-v1.8.4-rootless.deb) |
+| **RootHide** | [MemoryToolkitApp-v1.8.4-roothide.deb](https://github.com/susu123oss/MemoryToolkit-Release/releases/download/1.8.4/MemoryToolkitApp-v1.8.4-roothide.deb) |
+
+> 不确定选哪个时：**TrollStore 安装优先选 TIPA；使用越狱包管理器安装时，请按 rootful / rootless / RootHide 环境选择对应 DEB。不要混装不同环境的 DEB。**
+
+## v1.8.4 重点更新
+
+这一版不只是修复单点问题，近期重点把 MT 的搜索、稳定定位、断点、ARM64、补丁和外部自动化链路继续做完整。
+
+- **Relaxin / RootHide 环境识别**：可正确识别 Relaxin 启动器品牌，同时独立识别 RootHide / roothide 运行环境。
+- **断点能力改为实际探测**：WVR 数据断点与 BVR 代码断点不再只按越狱名称判断能力，而是结合调试寄存器、Mach exception 和目标进程实际返回结果确认。
+- **WVR / BVR 运行时闭环**：硬件断点建立后会确认 exception monitoring 是否真实可用；失败时会撤销硬件状态并安全降级，避免留下无人处理的断点状态。
+- **Relaxin / RootHide 真机验证**：当前已验证 task-level exception port 可建立，WVR 与 BVR 均可进入 runtime Full；BVR 可复用已有 exception monitoring。
+- **环境检测更轻量**：同一进程生命周期内复用环境 Profile，减少重复的 Launcher / 文件系统扫描。
+- **搜索链继续优化**：加强字符串、模糊/改善搜索、结果存储、分页、完整性和目标进程切换保护。
+- **特征码工作流继续完善**：自动扫描、两次对比、手动规则锚点、测试匹配与插件特征值校验进一步收口。
+- **MCP / Agent 增强**：完善 Streamable HTTP / Session 工作流和补丁自动化能力，方便桌面 AI / 自动化客户端复用手机端实时分析能力。
+- **稳定性与回归覆盖**：补充断点寄存器、反汇编刷新、搜索、特征码、MCP 与主题等多组回归检查。
+
+> 不同设备、系统版本、目标进程和权限环境仍可能表现不同。MT 会先判断基础能力，再在真正设置断点时确认 runtime 能力，而不是仅依据越狱品牌做假设。
 
 ## MemoryToolkit 是什么
 
@@ -283,7 +318,7 @@ AI Provider 支持 OpenAI / Anthropic 协议以及自定义 Base URL、模型和
 
 ### MCP Server
 
-MT 内置 MCP HTTP/SSE Server，可让支持 MCP 的桌面客户端调用手机上的部分实时分析能力。
+MT 内置 MCP Server，支持 Streamable HTTP / Session 工作流，并保留 SSE 兼容路径，可让支持 MCP 的桌面客户端调用手机上的部分实时分析能力。
 
 适合：
 
@@ -343,10 +378,11 @@ MT 针对真实 iPhone 调试场景提供独立的系统级悬浮交互：
 | **代码断点** | BVR 硬件代码断点，能力取决于设备与目标进程权限 |
 | **Cheat Engine** | 建议 CE 7.5+，推荐 7.6 |
 | **AI** | 需要自行配置可访问的 Provider / Base URL / API Key / 模型 |
-| **MCP** | HTTP/SSE 高权限调试接口，仅建议可信网络或 USB 转发环境 |
+| **环境识别** | 支持区分 Launcher 品牌、Runtime Family、Root Mode 与实际断点能力；已加入 Relaxin / RootHide 识别 |
+| **MCP** | Streamable HTTP / Session + SSE 兼容的高权限调试接口，仅建议可信网络或 USB 转发环境 |
 | **H5** | 提供常用 H5GG 风格兼容映射，不承诺完整 API |
 
-不同环境下硬件断点能力可能不同。MT 会根据设备和权限环境进行能力检测与降级，部分环境只能使用有限的调试能力。
+不同环境下硬件断点能力可能不同。MT 不再把“越狱品牌”直接等同于“断点能力”，而是先建立环境 Profile，再在 WVR / BVR 真正启用时根据目标进程上的实际能力确认 Full / 降级路径。
 
 ## 使用建议
 
