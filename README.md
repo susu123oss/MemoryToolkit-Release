@@ -1,4 +1,4 @@
-<h1 align="center">MemoryToolkit</h1>
+<h1 align="center">MT MemoryToolkit · MT 内存工具</h1>
 
 <p align="center">
   <strong>MT 内存工具 · iOS ARM64 动态内存分析与自动化工作台</strong>
@@ -10,6 +10,7 @@
 </p>
 
 <p align="center">
+  <img alt="Public Release v1.8.6" src="https://img.shields.io/badge/Release-v1.8.6-0A84FF?style=flat-square">
   <img alt="iOS 14+" src="https://img.shields.io/badge/iOS-14%2B-111111?style=flat-square&logo=apple">
   <img alt="arm64" src="https://img.shields.io/badge/Architecture-arm64-5E5CE6?style=flat-square">
   <img alt="TrollStore and DEB" src="https://img.shields.io/badge/Install-TrollStore%20%7C%20DEB-0A84FF?style=flat-square">
@@ -17,9 +18,10 @@
 </p>
 
 <p align="center">
+  <a href="#mt-家族--mt-family">MT 家族</a> ·
   <a href="#最新版本">最新版本</a> ·
   <a href="#下载与安装">下载与安装</a> ·
-  <a href="#v184-重点更新">v1.8.4 更新</a> ·
+  <a href="#v186-重点更新">v1.8.6 更新</a> ·
   <a href="#mt-能做什么">核心能力</a> ·
   <a href="#典型工作流">典型工作流</a> ·
   <a href="#ai--mcp--ce--h5">扩展协作</a> ·
@@ -28,31 +30,47 @@
 
 > MemoryToolkit 是通用技术调试工具，仅用于安全研究、逆向工程学习和已获授权的技术测试，不针对任何特定应用。
 
+---
+
+## MT 家族 · MT Family
+
+**一套面向 iPhone 的工程与自动化生态，三款各司其职的独立产品。**
+
+| 产品 | 核心定位 | 适合做什么 | 下载 |
+| --- | --- | --- | --- |
+| **MT 智能体 · MT Agent** | AI 工程中枢 | 理解项目、分析日志、协助编程、调用工具与 Runtime | [查看 MT Agent](https://github.com/susu123oss/MT-Agent) |
+| **MT 内存工具 · MemoryToolkit** | 真机动态分析工作台 | 内存搜索、稳定定位、断点、ARM64 分析与 MCP 调试 | [查看 MemoryToolkit](https://github.com/susu123oss/MemoryToolkit-Release) |
+| **MT 连点器 · AutoClicker** | 视觉与触摸自动化 | 连点、手势、找图、找色、OCR 与设备侧流程执行 | [查看 AutoClicker](https://github.com/susu123oss/MT-Auto-clicker) |
+
+**理解与编排（Agent） × 运行时观察（MemoryToolkit） × 设备侧执行（AutoClicker）**
+
+三款产品分别安装、独立更新。按需组合即可：需要真机动态分析时，可使用 MT 内存工具提供的 MCP 调试能力与 Agent 协作；连点器则专注视觉识别和触摸自动化，不依赖安装另外两款 App。
+
+---
+
 ## 最新版本
 
-### v1.8.4
+### v1.8.6 · 最新公开正式版
 
 <p align="center">
-  <a href="https://github.com/susu123oss/MemoryToolkit-Release/releases/tag/1.8.4"><strong>前往 v1.8.4 Release 下载</strong></a>
+  <a href="https://github.com/susu123oss/MemoryToolkit-Release/releases/tag/1.8.6"><strong>下载 MT 内存工具 v1.8.6</strong></a>
 </p>
+
+这里是 MT 内存工具面向用户的**官方公开发布与下载仓库**。安装包、版本更新与历史版本均以 [Releases](https://github.com/susu123oss/MemoryToolkit-Release/releases) 页面为准。
 
 > TrollStore 用户使用 TIPA；通过越狱包管理器安装时，请选择与你当前环境匹配的 DEB。具体选择方式见下方“下载与安装”。
 
-## v1.8.4 重点更新
+## v1.8.6 重点更新
 
-这一版不只是修复单点问题，近期重点把 MT 的搜索、稳定定位、断点、ARM64、补丁和外部自动化链路继续做完整。
+本次正式版聚焦于**修改可恢复、断点更准确、悬浮服务更稳定**，进一步打磨从搜索到验证的完整调试体验。
 
-- **Relaxin / RootHide 环境识别**：可正确识别 Relaxin 启动器品牌，同时独立识别 RootHide / roothide 运行环境。
-- **断点能力改为实际探测**：WVR 数据断点与 BVR 代码断点不再只按越狱名称判断能力，而是结合调试寄存器、Mach exception 和目标进程实际返回结果确认。
-- **WVR / BVR 运行时闭环**：硬件断点建立后会确认 exception monitoring 是否真实可用；失败时会撤销硬件状态并安全降级，避免留下无人处理的断点状态。
-- **Relaxin / RootHide 真机验证**：当前已验证 task-level exception port 可建立，WVR 与 BVR 均可进入 runtime Full；BVR 可复用已有 exception monitoring。
-- **环境检测更轻量**：同一进程生命周期内复用环境 Profile，减少重复的 Launcher / 文件系统扫描。
-- **搜索链继续优化**：加强字符串、模糊/改善搜索、结果存储、分页、完整性和目标进程切换保护。
-- **特征码工作流继续完善**：自动扫描、两次对比、手动规则锚点、测试匹配与插件特征值校验进一步收口。
-- **MCP / Agent 增强**：完善 Streamable HTTP / Session 工作流和补丁自动化能力，方便桌面 AI / 自动化客户端复用手机端实时分析能力。
-- **稳定性与回归覆盖**：补充断点寄存器、反汇编刷新、搜索、特征码、MCP 与主题等多组回归检查。
+- **批量修改与恢复**：修复大结果集反复进行“批量修改 → 恢复并删除”后可能丢失原始基准值的问题，连续操作更安心。
+- **数据 / 代码断点**：增强 iOS 16+、A12 及更新设备上的指针签名兼容性，提升断点命中和指令定位的稳定性。
+- **悬浮球后台稳定性**：优化部分切后台场景下的悬浮服务存活，减少异常退出。
+- **外部工具协作**：改善与 PC 调试工具、自动化客户端协作时的响应和数据传输体验。
+- **持续完善分析闭环**：保留 PointerMap、特征码、规则锚点、寄存器、ARM64 反汇编、Patch、插件与 MCP 等能力。
 
-> 不同设备、系统版本、目标进程和权限环境仍可能表现不同。MT 会先判断基础能力，再在真正设置断点时确认 runtime 能力，而不是仅依据越狱品牌做假设。
+> 特定权限能力取决于设备、系统与安装环境。跨进程访问、硬件断点和悬浮能力以实际检测结果为准。
 
 ## MemoryToolkit 是什么
 
@@ -73,12 +91,12 @@
 
 | 设备环境 | 安装包 | 说明 |
 | --- | --- | --- |
-| **TrollStore** | `MemoryToolkitApp-vX.Y.Z.tipa` | 独立 App，适合 TrollStore 环境 |
-| **rootful 越狱** | `MemoryToolkitApp-vX.Y.Z-rootful.deb` | 安装到 `/Applications/MemoryToolkitApp.app` |
-| **rootless 越狱** | `MemoryToolkitApp-vX.Y.Z-rootless.deb` | 安装到 `/var/jb/Applications/MemoryToolkitApp.app` |
-| **RootHide** | `MemoryToolkitApp-vX.Y.Z-roothide.deb` | 使用 RootHide 对应安装包 |
+| **TrollStore** | `MemoryToolkitApp-v1.8.6.tipa` | 独立 App，适合 TrollStore 环境 |
+| **rootful 越狱** | `MemoryToolkitApp-v1.8.6-rootful.deb` | 安装到 `/Applications/MemoryToolkitApp.app` |
+| **rootless 越狱** | `MemoryToolkitApp-v1.8.6-rootless.deb` | 安装到 `/var/jb/Applications/MemoryToolkitApp.app` |
+| **RootHide** | `MemoryToolkitApp-v1.8.6-roothide.deb` | 使用 RootHide 对应安装包 |
 
-> TIPA 与三种 DEB 面向不同运行环境，请不要混装。跨进程内存访问、系统级悬浮窗和硬件断点能力仍取决于设备权限、系统版本与当前越狱 / TrollStore 环境。
+> 上表列出 **v1.8.6 Release 实际已上传的文件名**。本次 README 更新不会重命名已发布附件。TIPA 与三种 DEB 面向不同运行环境，请不要混装。跨进程内存访问、系统级悬浮窗和硬件断点能力仍取决于设备权限、系统版本与当前越狱 / TrollStore 环境。
 
 ## MT 能做什么
 
@@ -401,6 +419,6 @@ MT 针对真实 iPhone 调试场景提供独立的系统级悬浮交互：
 ---
 
 <p align="center">
-  <strong>MemoryToolkit</strong><br>
+  <strong>MT MemoryToolkit · MT Family</strong><br>
   从发现地址，到稳定定位；从解释现场，到固化为可重复执行的方案。
 </p>
