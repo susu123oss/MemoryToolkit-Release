@@ -50,15 +50,16 @@ Download the package matching your iOS environment from [**GitHub Releases**](ht
   <a href="https://github.com/susu123oss/MemoryToolkit-Release/releases/latest"><strong>⬇ Download Latest Release</strong></a>
 </p>
 
-| Target Environment | Package Pattern | Installation Path / Notes |
-| :--- | :--- | :--- |
-| **TrollStore** | `MT-MemoryToolkit-*.tipa` | Standalone app bundle for TrollStore (`arm64`) |
-| **Rootless Jailbreak** | `MT-MemoryToolkit-*-rootless.deb` | Installs to `/var/jb/Applications/MemoryToolkitApp.app` (`iphoneos-arm64`) |
-| **RootHide Jailbreak** | `MT-MemoryToolkit-*-roothide.deb` | Built with RootHide toolchain (`iphoneos-arm64e`) |
-| **Rootful Jailbreak** | `MT-MemoryToolkit-*-rootful.deb` | Installs to `/Applications/MemoryToolkitApp.app` (`iphoneos-arm64`) |
+| Environment Type | Package &amp; Scheme | Typical iOS Range | Common Tools / Examples | Characteristics &amp; Selection Notes |
+| :--- | :--- | :--- | :--- | :--- |
+| **TrollStore**<br>*(No Jailbreak)* | `MT-MemoryToolkit-*.tipa`<br>`arm64` Standalone App | `iOS 14.0 – 16.6.1`<br>`iOS 17.0` | • **TrollStore** / **TrollStore Lite** | Installs directly via CoreTrust persistence without a full jailbreak. Recommended for stock TrollStore devices and **Bootstrap** semi-jailbreak setups. |
+| **Rootless Jailbreak** | `MT-MemoryToolkit-*-rootless.deb`<br>`iphoneos-arm64` (`/var/jb`) | `iOS 15.0+` | • **Dopamine**<br>• **NathanLR** / **Relaxin**<br>• **palera1n (Rootless)**<br>• **XinaA15** / **Fugu15** | Modern mainstream jailbreak model. Leaves the system root volume untouched and stores jailbreak files under `/var/jb` for better system stability and safety. |
+| **RootHide Jailbreak** | `MT-MemoryToolkit-*-roothide.deb`<br>`iphoneos-arm64e` (`.jbroot`) | `iOS 15.0+` | • **Dopamine (RootHide)**<br>• **RootHide Sileo / Zebra** | Stealth-oriented jailbreak with randomized `.jbroot` paths designed to hide jailbreak artifacts and reduce app detection risk. |
+| **Rootful Jailbreak** | `MT-MemoryToolkit-*-rootful.deb`<br>Legacy Rootful (`/Applications`) | Primarily `iOS 14` &amp; earlier<br>*(plus `palera1n` Rootful)* | • **unc0ver** / **Taurine**<br>• **Odyssey** / **Chimera**<br>• **checkra1n** / **palera1n (Rootful)** | Classic rootful jailbreak with direct read/write access to the system root filesystem (`/`), installed via Sileo, Cydia, or Zebra. |
 
 > [!IMPORTANT]
-> `TIPA` and the three `DEB` variants target distinct runtime layouts—do not cross-install mismatched formats. Cross-process VM access, system-level floating windows, and hardware debug registers remain subject to your iOS version, kernel entitlements, and active TrollStore or jailbreak environment.
+> - **Quick Selection Rule**: Stock TrollStore or Bootstrap-only device → choose **`.tipa`**; mainstream iOS 15+ jailbreaks (`Dopamine` / `NathanLR` / `Relaxin`) → choose **`-rootless.deb`**; `RootHide` environment (package manager shows `iphoneos-arm64e`) → choose **`-roothide.deb`**; classic iOS 14 jailbreaks (`unc0ver` / `Taurine` / `checkra1n`) → choose **`-rootful.deb`**. Do not cross-install mismatched formats.
+> - **About Architecture Tags**: Labels such as `iphoneos-arm`, `iphoneos-arm64`, and `iphoneos-arm64e` in package managers identify the **jailbreak packaging scheme (runtime environment)** rather than your iPhone's physical CPU model.
 
 ---
 
