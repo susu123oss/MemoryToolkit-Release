@@ -13,7 +13,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/susu123oss/MemoryToolkit-Release/releases/latest"><img alt="Latest Release" src="https://img.shields.io/github/v/release/susu123oss/MemoryToolkit-Release?style=flat-square&label=Release&color=0A84FF"></a>
+  <a href="https://github.com/susu123oss/MemoryToolkit-Release/releases/latest"><img alt="Latest Release" src="https://img.shields.io/github/v/release/susu123oss/MemoryToolkit-Release?style=flat-square&label=Latest%20Release&color=0A84FF"></a>
   <img alt="iOS 14+" src="https://img.shields.io/badge/iOS-14.0%2B-111827?style=flat-square&logo=apple">
   <img alt="Architecture" src="https://img.shields.io/badge/Arch-arm64%20%7C%20arm64e-5E5CE6?style=flat-square">
   <img alt="Environment" src="https://img.shields.io/badge/Install-TrollStore%20%7C%20Rootless%20%7C%20RootHide%20%7C%20Rootful-2563EB?style=flat-square">
@@ -26,7 +26,6 @@
 
 <p align="center">
   <a href="#下载与安装">下载安装</a> ·
-  <a href="#v193-更新亮点">最新更新</a> ·
   <a href="#产品定位">产品定位</a> ·
   <a href="#核心能力">核心能力</a> ·
   <a href="#完整分析工作流">工作流</a> ·
@@ -40,32 +39,20 @@
 
 ## 下载与安装
 
-请前往 [**GitHub Releases**](https://github.com/susu123oss/MemoryToolkit-Release/releases/latest) 下载与你当前设备环境匹配的安装包：
+请前往 [**GitHub Releases**](https://github.com/susu123oss/MemoryToolkit-Release/releases) 获取与你当前设备环境匹配的最新安装包，并查看各版本更新日志：
 
 <p align="center">
-  <a href="https://github.com/susu123oss/MemoryToolkit-Release/releases/latest"><strong>⬇ 前往下载最新版本（v1.9.3）</strong></a>
+  <a href="https://github.com/susu123oss/MemoryToolkit-Release/releases/latest"><strong>⬇ 前往下载最新版本</strong></a>
 </p>
 
-| 设备环境 | 安装包文件名 | 说明 |
+| 设备环境 | 安装包格式 | 说明 |
 | :--- | :--- | :--- |
-| **TrollStore（巨魔）** | `MT-MemoryToolkit-vX.Y.Z.tipa` | 独立 App 安装包，适合 TrollStore 环境（`arm64`） |
-| **Rootless 越狱** | `MT-MemoryToolkit-vX.Y.Z-rootless.deb` | 安装至 `/var/jb/Applications/MemoryToolkitApp.app`（`iphoneos-arm64`） |
-| **RootHide 越狱** | `MT-MemoryToolkit-vX.Y.Z-roothide.deb` | 适配 RootHide 环境（`iphoneos-arm64e`） |
-| **Rootful 越狱** | `MT-MemoryToolkit-vX.Y.Z-rootful.deb` | 安装至 `/Applications/MemoryToolkitApp.app`（`iphoneos-arm64`） |
+| **TrollStore（巨魔）** | `MT-MemoryToolkit-*.tipa` | 独立 App 安装包，适合 TrollStore 环境（`arm64`） |
+| **Rootless 越狱** | `MT-MemoryToolkit-*-rootless.deb` | 安装至 `/var/jb/Applications/MemoryToolkitApp.app`（`iphoneos-arm64`） |
+| **RootHide 越狱** | `MT-MemoryToolkit-*-roothide.deb` | 适配 RootHide 环境（`iphoneos-arm64e`） |
+| **Rootful 越狱** | `MT-MemoryToolkit-*-rootful.deb` | 安装至 `/Applications/MemoryToolkitApp.app`（`iphoneos-arm64`） |
 
 > 不同包格式面向不同运行环境，请勿混装。跨进程内存读写、全局悬浮窗及硬件调试寄存器的可用范围取决于设备系统版本、内核权限以及当前 TrollStore 或越狱环境。
-
----
-
-## v1.9.3 更新亮点
-
-- **升级内置拼音与符号输入法**：重做键盘视觉层次，新增双页中英文符号切换、顶部常用调试字符（`0x` / `_` / `=` / `:` 等）快捷栏与左右光标移动键，支持英文双击锁定大写和长按连续退格。
-- **优化模糊搜索与大结果集稳定性**：海量模糊搜索候选地址与上轮对比值自动转存磁盘映射存储，降低多次筛选时的内存占用与闪退风险，提速大结果集列表加载。
-- **完善字符串搜索与内存查看器**：新增独立字符串编辑器，支持 `UTF-8` / `UTF-16LE` / `UTF-16BE` 多编码浏览与直接修改；内存查看器新增字符串流式翻页模式。
-- **焕新界面视觉与 6 套主题色系**：新增晴空彩虹、薄荷青岚等 6 套主题配色（支持浅色 / 深色 / 跟随系统），统一清爽浅底按钮与 `SF Mono` 等宽地址数值排版，横竖屏旋转更顺滑。
-- **升级 MP 独立插件体验**：换新磨砂悬浮球与面板布局，切换指针链、补丁和特征码分页时保持统一面板高度不再跳动，同时完善独立插件联网稳定性与状态提示。
-- **修复设备环境与图标识别**：修正部分设备 TrollStore 图标优先级、未越狱或越狱残留状态下的图标显示，以及活跃越狱态判定逻辑。
-- **完善全界面中英文实时切换**：补齐主界面、悬浮面板与汇编指令说明的英文翻译，同步支持导出 MP 插件中英文动态切换，消除双语混排残留。
 
 ---
 
@@ -87,7 +74,7 @@
 ### 1. 内存搜索与大结果集管理
 - **数据类型**：`I8 / I16 / I32 / I64`、`U8 / U16 / U32 / U64`、`F32 / F64`、`UTF-8 / UTF-16LE / UTF-16BE` 字符串及原始 Hex 字节。
 - **搜索模式**：精确搜索、二次改善、范围搜索、模糊搜索（变大 / 变小 / 变化 / 未变化 / 等于）、差值模糊搜索、同组与混合类型联合搜索、临近搜索、字符串搜索、XOR 搜索及多步搜索撤销。
-- **结果处理**：支持批量修改、递增写入、冻结 / 解冻、偏移计算、收藏、按类型筛选，以及千万级结果集自动落盘 `mmap` 管理。
+- **结果处理**：支持批量修改、递增写入、冻结 / 解冻、偏移计算、收藏、按类型筛选，以及千万级结果集与模糊搜索基准值自动落盘 `mmap` 管理。
 
 ### 2. 内存查看器与多编码字符串编辑器
 - 支持绝对地址或 `模块 + 偏移` 跳转，保留完整跳转历史。
@@ -113,7 +100,7 @@
 - 支持一键 `NOP`、自定义指令补丁写入与原始字节无损恢复。
 
 ### 7. 手机端独立插件合成与 Flow 流程自动化
-- 支持在设备端直接将 **Pointer**（指针链）、**Patch**（指令补丁）、**Signature**（特征码）、**Rule Anchor**（规则锚点）与 **Flow**（自动化流程）合成为独立运行的 `.dylib` 插件。
+- 支持在设备端直接将 **Pointer**（指针链）、**Patch**（指令补丁）、**Signature**（特征码）、**Rule Anchor**（规则锚点）与 **Flow**（自动化流程）合成为带磨砂悬浮球与统一多标签面板的独立 `.dylib` 插件。
 - **Flow 流程脚本**可将「搜索 → 条件筛选 → 判断分支 → 偏移写入」固化为结构化自动执行流程，并在关闭时自动逆序回滚原始内存字节。
 
 ---
@@ -155,8 +142,8 @@ flowchart LR
 
 - **全方向跟随**：支持竖屏与左右横屏，跟随前台应用自动旋转并独立记忆横竖屏悬浮位置。
 - **锁屏安全生命周期**：锁屏自动销毁释放渲染上下文，解锁稳定后再显现，避免闪屏与系统强退。
-- **多主题与双语切换**：内置 6 套强调色板，支持浅色 / 深色 / 跟随系统外观，支持中文与 English 实时无缝切换。
-- **自研调试输入法**：内置拼音与双页符号键盘及十六进制快捷栏，解决系统级悬浮窗内的输入痛点。
+- **多主题与双语切换**：内置 6 套强调色板，支持浅色 / 深色 / 跟随系统外观与 `SF Mono` 等宽地址数字排版，支持中文与 English 实时无缝切换。
+- **自研调试输入法**：内置拼音与双页符号键盘，配备常用调试字符（`0x` / `_` / `=` / `:`）快捷栏、左右光标键、英文双击锁定大写与长按连续退格。
 
 ---
 
