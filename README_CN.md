@@ -147,16 +147,6 @@ flowchart LR
 
 ---
 
-## MT 家族生态
-
-| 产品 | 定位 | 发布仓库 |
-| :--- | :--- | :--- |
-| **MT MemoryToolkit（MT 内存工具）** | iOS ARM64 动态内存分析与调试工作台 | **当前仓库** |
-| **MT Agent（MT 智能体）** | 移动端 AI 工程工作站、编译构建与 MCP 协同中枢 | [susu123oss/MT-Agent](https://github.com/susu123oss/MT-Agent) |
-| **MT AutoClicker（MT 连点器）** | 系统级图像识别（OCR / 找图 / 找色）与触控自动化工具 | [susu123oss/MT-Auto-clicker](https://github.com/susu123oss/MT-Auto-clicker) |
-
----
-
 ## 兼容性与边界
 
 | 项目 | 支持范围 |

@@ -147,16 +147,6 @@ Designed specifically for uninterrupted on-device analysis without switching bac
 
 ---
 
-## MT Family Ecosystem
-
-| Product | Positioning | Releases |
-| :--- | :--- | :--- |
-| **MT MemoryToolkit** | iOS ARM64 Dynamic Memory Analysis &amp; Debugging Workbench | **Current Repository** |
-| **MT Agent** | On-Device AI Engineering Workspace, Compiler &amp; MCP Orchestrator | [susu123oss/MT-Agent](https://github.com/susu123oss/MT-Agent) |
-| **MT AutoClicker** | System-Wide Visual Recognition (OCR / Template / Color) &amp; Touch Automation | [susu123oss/MT-Auto-clicker](https://github.com/susu123oss/MT-Auto-clicker) |
-
----
-
 ## Compatibility &amp; Boundaries
 
 | Item | Specification |
