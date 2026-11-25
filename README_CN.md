@@ -53,12 +53,12 @@
 | 环境类型 | 对应安装包 / 环境标识 | 常见系统范围 | 常见工具 / 示例 | 环境特点与选包说明 |
 | :--- | :--- | :--- | :--- | :--- |
 | **巨魔免越狱**<br>（TrollStore） | `MT-MemoryToolkit-*.tipa`<br>`arm64` 独立应用 | `iOS 14.0 – 16.6.1`<br>`iOS 17.0` | • **TrollStore** / **TrollStore Lite** | 免越狱利用 CoreTrust 永久签名直装；未越狱设备或仅使用 **Bootstrap 半越狱** 的设备请直接安装此包。 |
-| **无根越狱**<br>（Rootless） | `MT-MemoryToolkit-*-rootless.deb`<br>`iphoneos-arm64`（`/var/jb`） | `iOS 15.0` 及以上 | • **Dopamine**<br>• **NathanLR** / **Relaxin**<br>• **palera1n（无根）**<br>• **XinaA15** / **Fugu15** | 当前主流越狱形态；不直接修改系统根分区，越狱目录独立存放在 `/var/jb` 下，兼顾完整权限与系统安全稳定。 |
-| **隐根越狱**<br>（RootHide） | `MT-MemoryToolkit-*-roothide.deb`<br>`iphoneos-arm64e`（`.jbroot`） | `iOS 15.0` 及以上 | • **RootHide 版 Dopamine**<br>• **RootHide 版 Sileo / Zebra** | 具备随机化越狱目录与隐藏越狱环境的能力，降低被应用检测的风险，适合对防检测要求较高的场景。 |
+| **无根越狱**<br>（Rootless） | `MT-MemoryToolkit-*-rootless.deb`<br>`iphoneos-arm64`（`/var/jb`） | `iOS 15.0` 及以上 | • **Dopamine（标准无根版）**<br>• **NathanLR**<br>• **palera1n（无根）**<br>• **XinaA15** / **Fugu15** | 当前主流越狱形态；不直接修改系统根分区，越狱目录独立存放在 `/var/jb` 下，兼顾完整权限与系统安全稳定。 |
+| **隐根越狱**<br>（RootHide） | `MT-MemoryToolkit-*-roothide.deb`<br>`iphoneos-arm64e`（`.jbroot`） | `iOS 15.0` 及以上 | • **RootHide 版 Dopamine**<br>• **Relaxin** / **Relaxin Lite** | 具备随机化越狱目录与隐藏越狱环境的能力，降低被应用检测的风险，适合对防检测要求较高的场景。 |
 | **有根越狱**<br>（Rootful） | `MT-MemoryToolkit-*-rootful.deb`<br>传统有根环境（`/Applications`） | `iOS 14` 及以下为主<br>（含 `palera1n` 有根模式） | • **unc0ver** / **Taurine**<br>• **Odyssey** / **Chimera**<br>• **checkra1n** / **palera1n（有根）** | 传统有根越狱，获取完整系统根目录读写权限，可直接修改系统分区文件，通过 Sileo / Cydia / Zebra 安装。 |
 
 > [!IMPORTANT]
-> - **快速选包对照**：没越狱只装了巨魔（或仅装 Bootstrap）选 **`.tipa`**；`Dopamine` / `NathanLR` / `Relaxin` 等主流 iOS 15+ 越狱选 **`-rootless.deb`**；明确使用 `RootHide` 隐根越狱（包管理器显示 `iphoneos-arm64e`）选 **`-roothide.deb`**；`iOS 14` 经典越狱（`unc0ver` / `Taurine` / `checkra1n`）选 **`-rootful.deb`**。请勿跨环境混装。
+> - **快速选包对照**：没越狱只装了巨魔（或仅装 Bootstrap）选 **`.tipa`**；标准无根 `Dopamine` / `NathanLR` / `XinaA15` 等选 **`-rootless.deb`**；隐根越狱（`RootHide 版 Dopamine` / `Relaxin`，包管理器显示 `iphoneos-arm64e`）选 **`-roothide.deb`**；`iOS 14` 经典越狱（`unc0ver` / `Taurine` / `checkra1n`）选 **`-rootful.deb`**。请勿跨环境混装。
 > - **关于架构（系统环境）标识**：包管理器中的 `iphoneos-arm`、`iphoneos-arm64`、`iphoneos-arm64e` 指的是**越狱工具对应的系统打包环境规范**，用于区分有根 / 无根 / 隐根生态，并不代表手机 CPU 芯片本身的差异。
 
 ---
