@@ -20,6 +20,7 @@
   <img alt="Architecture" src="https://img.shields.io/badge/Arch-arm64%20%7C%20arm64e-5E5CE6?style=flat-square">
   <img alt="Environment" src="https://img.shields.io/badge/Install-TrollStore%20%7C%20Rootless%20%7C%20RootHide%20%7C%20Rootful-2563EB?style=flat-square">
   <img alt="UI Language" src="https://img.shields.io/badge/UI-English%20%7C%20%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-34C759?style=flat-square">
+  <img alt="与 Google Gemini 联合开发" src="https://img.shields.io/badge/Co--Built%20with-Google%20Gemini-4285F4?style=flat-square&logo=googlegemini&logoColor=white">
 </p>
 
 <p align="center">
@@ -304,5 +305,6 @@ flowchart LR
 
 <p align="center">
   <strong>MT MemoryToolkit</strong><br>
-  从发现地址，到稳定定位；从解释现场，到固化为可重复执行的方案。
+  从发现地址，到稳定定位；从解释现场，到固化为可重复执行的方案。<br>
+  <sub>与 <strong>Google Gemini</strong> 大模型共同架构与开发 · Co-engineered with Google Gemini</sub>
 </p>

@@ -20,6 +20,7 @@
   <img alt="Architecture" src="https://img.shields.io/badge/Arch-arm64%20%7C%20arm64e-5E5CE6?style=flat-square">
   <img alt="Environment" src="https://img.shields.io/badge/Install-TrollStore%20%7C%20Rootless%20%7C%20RootHide%20%7C%20Rootful-2563EB?style=flat-square">
   <img alt="UI Language" src="https://img.shields.io/badge/UI-English%20%7C%20%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-34C759?style=flat-square">
+  <img alt="Co-Built with Google Gemini" src="https://img.shields.io/badge/Co--Built%20with-Google%20Gemini-4285F4?style=flat-square&logo=googlegemini&logoColor=white">
 </p>
 
 <p align="center">
@@ -304,5 +305,6 @@ If you are new to **MT MemoryToolkit**, exploring its modules in this order keep
 
 <p align="center">
   <strong>MT MemoryToolkit</strong><br>
-  From discovering an address to anchoring it across restarts; from explaining live execution to solidifying repeatable workflows.
+  From discovering an address to anchoring it across restarts; from explaining live execution to solidifying repeatable workflows.<br>
+  <sub>Co-engineered &amp; built together with <strong>Google Gemini</strong></sub>
 </p>
