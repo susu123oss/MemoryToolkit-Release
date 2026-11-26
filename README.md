@@ -37,6 +37,10 @@
   <a href="#getting-started-path">Getting Started</a>
 </p>
 
+<p align="center">
+  <img src="assets/demo-en.gif" width="864" alt="MT MemoryToolkit 10s Interactive Workflow Demo" />
+</p>
+
 > [!NOTE]
 > **MT MemoryToolkit** is a general-purpose runtime debugging and dynamic analysis workbench designed strictly for security research, reverse engineering education, and authorized technical testing. It does not target any specific application.
 

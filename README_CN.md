@@ -37,6 +37,10 @@
   <a href="#循序渐进使用建议">使用建议</a>
 </p>
 
+<p align="center">
+  <img src="assets/demo-zh.gif" width="864" alt="MT MemoryToolkit 10 秒全链路演示动图" />
+</p>
+
 > [!NOTE]
 > **MT MemoryToolkit** 是通用技术调试与动态分析工具，仅用于安全研究、逆向工程学习与已获授权的技术测试，不针对任何特定应用。
 
