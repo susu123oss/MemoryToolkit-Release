@@ -78,6 +78,17 @@ Most mobile memory utilities stop at *"search a number → overwrite a number"*.
 
 Viewed one feature at a time, MT looks like a memory scanner; viewed across the entire loop, it operates as a self-contained **iOS ARM64 Dynamic Memory Analysis &amp; Automation Workbench** running natively on iPhone.
 
+<p align="center">
+  <img src="assets/screenshots/en-01-home.png" width="255" alt="MT Home Dashboard & Environment Profile" />
+  &nbsp;&nbsp;
+  <img src="assets/screenshots/en-02-search.png" width="255" alt="Cross-Process Memory Search" />
+  &nbsp;&nbsp;
+  <img src="assets/screenshots/en-06-disasm.png" width="255" alt="Hardware Breakpoint & ARM64 Disassembler" />
+</p>
+<p align="center">
+  <sub><strong>Left:</strong> Service Dashboard &amp; Environment Profile &nbsp;·&nbsp; <strong>Center:</strong> Live Memory Search &nbsp;·&nbsp; <strong>Right:</strong> Hardware Breakpoint &amp; ARM64 Disassembly</sub>
+</p>
+
 ---
 
 ## Core Capabilities
@@ -100,6 +111,15 @@ Inspect surrounding memory structures and transition seamlessly from raw data to
 - **Standalone String Editor**: Dedicated multi-encoding string inspector and editor (`UTF-8`, `UTF-16LE`, `UTF-16BE`) with safe boundary write-back.
 - **Cross-Tool Handoff**: Jump directly from pointers, watchpoint hits, or stack frames into the Memory Viewer or ARM64 Disassembler.
 
+<p align="center">
+  <img src="assets/screenshots/en-03-viewer.png" width="260" alt="Memory Viewer Context Inspection" />
+  &nbsp;&nbsp;&nbsp;
+  <img src="assets/screenshots/en-04-ime.png" width="260" alt="Multi-Encoding String Editor & Built-in Keyboard" />
+</p>
+<p align="center">
+  <sub><strong>Left:</strong> Memory Viewer Context &amp; Anchor Highlighting &nbsp;·&nbsp; <strong>Right:</strong> Multi-Encoding String Editor &amp; Built-in Debug Keyboard</sub>
+</p>
+
 ### 3. PointerMap &amp; Multi-Level Pointer Chains
 
 Convert volatile heap addresses into stable static-module chains that survive restarts:
@@ -107,6 +127,13 @@ Convert volatile heap addresses into stable static-module chains that survive re
 - **Dual Engines**: High-speed streaming **PointerMap** snapshot + reverse BFS alongside classic Legacy pointer scanning.
 - **ARM64 &amp; Graph Precision**: PAC pointer stripping, positive/negative offsets, cycle detection, validity filtering, and disk-bucketed large result storage.
 - **Verification &amp; Self-Healing**: Save pointer files, run batch verification or multi-file cross-verification across restarts, and export directly to plugins. When a chain drifts slightly, MT can attempt nearby offset recovery, block scanning, and search-engine rescue rather than discarding the chain outright.
+
+<p align="center">
+  <img src="assets/screenshots/en-05-pointer.png" width="265" alt="Multi-Level PointerMap Chains" />
+</p>
+<p align="center">
+  <sub>Module-relative multi-level pointer chains resolved live across <code>UnityFramework</code> &amp; <code>GameAssembly.dylib</code></sub>
+</p>
 
 ### 4. Auto Signatures &amp; Rule Anchors
 
@@ -153,6 +180,13 @@ MT plugins go far beyond saving static addresses—synthesize standalone `.dylib
 | **Flow** | Structured automation graph (*Search → Refine/Filter → Conditional Branch → Loop/Offset Write*) with automatic reverse-order byte rollback on stop |
 
 The built-in **Plugin Maker** supports live in-app **Test** and **Restore** before exporting the final `.dylib`.
+
+<p align="center">
+  <img src="assets/screenshots/en-07-plugin.png" width="265" alt="Standalone Plugin Composer & Flow Automation" />
+</p>
+<p align="center">
+  <sub>On-device Plugin Composer combining Pointer, Patch, Auto/Manual Signature, and Flow Script items</sub>
+</p>
 
 ---
 

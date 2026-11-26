@@ -78,6 +78,17 @@
 
 如果只看单个功能，MT 像一款内存工具；如果看完整链路，它更接近一套运行在 iPhone 上的 **ARM64 动态内存分析与自动化工作台**。
 
+<p align="center">
+  <img src="assets/screenshots/zh-01-home.png" width="255" alt="MT 首页服务看板与环境画像" />
+  &nbsp;&nbsp;
+  <img src="assets/screenshots/zh-02-search.png" width="255" alt="跨进程内存搜索与结果列表" />
+  &nbsp;&nbsp;
+  <img src="assets/screenshots/zh-06-disasm.png" width="255" alt="硬件断点与 ARM64 反汇编视图" />
+</p>
+<p align="center">
+  <sub><strong>左：</strong>主界面服务看板与环境识别 &nbsp;·&nbsp; <strong>中：</strong>实时内存搜索列表 &nbsp;·&nbsp; <strong>右：</strong>硬件断点命中与 ARM64 反汇编</sub>
+</p>
+
 ---
 
 ## 核心能力详解
@@ -100,6 +111,15 @@
 - **独立字符串编辑器**：支持 `UTF-8 / UTF-16LE / UTF-16BE` 多编码上下文识别、分段浏览与安全回写。
 - **跨视图联动**：支持从内存查看器、指针链、断点命中或调用栈帧直接跳入 ARM64 反汇编视图。
 
+<p align="center">
+  <img src="assets/screenshots/zh-03-viewer.png" width="260" alt="内存查看器上下文步进浏览" />
+  &nbsp;&nbsp;&nbsp;
+  <img src="assets/screenshots/zh-04-ime.png" width="260" alt="独立字符串编辑器与内置输入法" />
+</p>
+<p align="center">
+  <sub><strong>左：</strong>内存查看器上下文步进与锚点高亮 &nbsp;·&nbsp; <strong>右：</strong>多编码字符串编辑器与内置调试键盘</sub>
+</p>
+
 ### 3. PointerMap 与多级指针
 
 把每次重启都会变化的动态堆地址转换为稳定的静态模块多级引用链：
@@ -107,6 +127,13 @@
 - **双路径扫描**：同时提供高速流式 **PointerMap** 快照反向搜索与经典 Legacy 指针搜索。
 - **ARM64 深度适配**：支持多级指针链、正负偏移、循环检测、地址有效性校验、PAC 指针剥离与分桶磁盘大结果集存储。
 - **跨重启验证与自愈**：支持指针文件保存、批量验证、多文件交叉验证与一键导出插件。原指针链发生轻微偏移时，MT 还支持尝试附近纠偏、块扫描与搜索引擎救援，避免有效链路被直接丢弃。
+
+<p align="center">
+  <img src="assets/screenshots/zh-05-pointer.png" width="265" alt="PointerMap 多级指针链实时解析" />
+</p>
+<p align="center">
+  <sub>基于模块基址偏移的多级指针链实时解算（<code>UnityFramework</code> / <code>GameAssembly.dylib</code>）</sub>
+</p>
 
 ### 4. 自动特征码与规则锚点
 
@@ -153,6 +180,13 @@ MT 的插件制作器可以直接在手机端将多种定位与修改能力合�
 | **Flow（自动化流程）** | 将「先搜什么 → 再筛什么 → 条件分支判断 → 循环或偏移写哪里」整理成结构化流程，停止时自动逆序回滚原始字节 |
 
 插件制作器内置实时 **测试** 与 **恢复** 能力，便于导出独立插件前在当前进程直接验证效果。
+
+<p align="center">
+  <img src="assets/screenshots/zh-07-plugin.png" width="265" alt="手机端独立插件制作与流程脚本" />
+</p>
+<p align="center">
+  <sub>集指针链、指令补丁、自动/手动特征码与流程脚本于一体的手机端独立插件制作器</sub>
+</p>
 
 ---
 
